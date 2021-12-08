@@ -1,0 +1,30 @@
+//Combo box css styles
+.combo-box .list-cell{
+    -fx-text-fill: #311D3F; //text color
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em;
+}
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover{
+    -fx-background-color: #07689F;//prev selected
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14pt;
+}
+.combo-box-popup .list-view .list-cell:filled:hover{
+    -fx-background-color:  #E7E6E1; //background cell hover
+    -fx-text-fill: #311D3F;
+}
+.combo-box > .list-cell {
+    //-fx-background-color:  #E7E6E1; //selected cell
+    -fx-font-size : 14pt;
+}
+.combo-box-popup .list-view {
+    -fx-font-size : 14pt;
+}
+
+//shadow tile effect
+.tiles{
+    -fx-background-color: rgb(255.0, 255.0, 255.0);
+    -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0,0.15), 6.0, 0.7, 0.0,1);
+}
+

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserController">
+   <children>
+	    <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #A9A9A9;">
+	         <children>
+	         	<Label layoutX="50.0" layoutY="30.0" text="CUSTOMER" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="25.0" />
+	               </font>
+	            </Label>
+	            <Line endX="230.0" fill="WHITE" layoutX="10.0" layoutY="60.0" opacity="0.85" stroke="BLACK" strokeLineCap="ROUND" />
+	            <JFXButton fx:id="btnBookRoom" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="130.0" onAction="#SwitchUI" prefHeight="40.0" prefWidth="230.0" text="Book Room" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="20" />
+	               </font>
+	               <graphic>
+	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+	               </graphic>
+	               <cursor>
+	                  <Cursor fx:constant="HAND" />
+	               </cursor>
+	            </JFXButton>
+	            <JFXButton fx:id="btnManageBooking" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="180.0" onAction="#SwitchUI" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Manage Booking" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="20" />
+	               </font>
+	               <graphic>
+	                  <FontAwesomeIconView fill="BLACK" glyphName="PLUS_SQUARE" size="25" />
+	               </graphic>
+	               <cursor>
+	                  <Cursor fx:constant="HAND" />
+	               </cursor>
+	            </JFXButton>
+	            <JFXButton fx:id="btnManageProfile" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="230.0" onAction="#SwitchUI" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Manage Profile" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="20" />
+	               </font>
+	               <graphic>
+	                  <MaterialDesignIconView fill="BLACK" glyphName="MOVIE" size="25" />
+	               </graphic>
+	               <cursor>
+	                  <Cursor fx:constant="HAND" />
+	               </cursor>
+	            </JFXButton>
+	            <JFXButton fx:id="btnLogout" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="280.0" onAction="#logOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="20" />
+	               </font>
+	               <graphic>
+	                  <MaterialDesignIconView fill="BLACK" glyphName="POWER" size="25" />
+	               </graphic>
+	               <cursor>
+	                  <Cursor fx:constant="HAND" />
+	               </cursor>
+	            </JFXButton>
+	            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="20.0" layoutY="520.0" text="Logged in as: Santosh" textFill="BLACK">
+	               <font>
+	                  <Font size="14.0" />
+	               </font>
+	               <graphic>
+	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="20" />
+	               </graphic>
+	            </Label>
+	         </children>
+	      </AnchorPane>
+		<AnchorPane layoutX="250.0" layoutY="10.0" prefHeight="580.0" prefWidth="600.0" style="-fx-background-color: #F5F5F5;" styleClass="tiles">
+			<Label layoutX="60.0" layoutY="50.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Guests" textFill="#020438" />
+			<JFXComboBox fx:id="cbmGuest" layoutX="300.0" layoutY="50.0" prefHeight="26.0" prefWidth="80.0">
+			   <items>
+			      <FXCollections fx:factory="observableArrayList">
+			         <String fx:value="0" />
+			         <String fx:value="1" />
+			         <String fx:value="2" />
+			         <String fx:value="3" />
+			         <String fx:value="4" />
+			         <String fx:value="5" />
+			         <String fx:value="6" />
+			         <String fx:value="7" />
+			         <String fx:value="8" />
+			         <String fx:value="9" />
+			         <String fx:value="10" />
+			      </FXCollections>
+			   </items>
+			   <cursor>
+			      <Cursor fx:constant="HAND" />
+			   </cursor>
+			</JFXComboBox>
+			<Label layoutX="60.0" layoutY="110.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Rooms" textFill="#020438" />
+			<JFXComboBox fx:id="cbmRooms" layoutX="300.0" layoutY="110.0" prefHeight="26.0" prefWidth="80.0">
+			   <items>
+			      <FXCollections fx:factory="observableArrayList">
+			         <String fx:value="0" />
+			         <String fx:value="1" />
+			         <String fx:value="2" />
+			         <String fx:value="3" />
+			         <String fx:value="4" />
+			         <String fx:value="5" />
+			         <String fx:value="6" />
+			         <String fx:value="7" />
+			         <String fx:value="8" />
+			         <String fx:value="9" />
+			         <String fx:value="10" />
+			      </FXCollections>
+			   </items>
+			   <cursor>
+			      <Cursor fx:constant="HAND" />
+			   </cursor>
+			</JFXComboBox>
+			<Label layoutX="60.0" layoutY="170.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Room Type" textFill="#020438" />
+			<JFXComboBox fx:id="cbmRoomType" layoutX="300.0" layoutY="170.0" prefHeight="26.0" prefWidth="200.0">
+			   <items>
+			      <FXCollections fx:factory="observableArrayList">
+			         <String fx:value="Semi Delux" />
+			         <String fx:value="Delux" />
+			         <String fx:value="Family Suite" />
+			         <String fx:value="Premium" />
+			      </FXCollections>
+			   </items>
+			   <cursor>
+			      <Cursor fx:constant="HAND" />
+			   </cursor>
+			</JFXComboBox>
+			<Label layoutX="60.0" layoutY="230.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Date From" textFill="#020438" />
+			<JFXDatePicker fx:id="dpDateFrom" layoutX="300" layoutY="230" style="-fx-font-size : 18px;" />
+			<Label layoutX="60.0" layoutY="290.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Date To" textFill="#020438" />
+			<JFXDatePicker fx:id="dpDateTo" layoutX="300" layoutY="290" style="-fx-font-size : 18px;" />
+			<JFXCheckBox fx:id="cbSpa" checkedColor="#73a800" layoutX="60.0" layoutY="350.0" style="-fx-opacity: 1; -fx-font-size : 19px;" text="Spa" textFill="#0d2c54" unCheckedColor="#ac005d" />
+            <JFXCheckBox fx:id="cbLounge" checkedColor="#73a800" layoutX="240.0" layoutY="350.0" style="-fx-opacity: 1; -fx-font-size : 19px;" text="Lounge" textFill="#0d2c54" unCheckedColor="#ac005d" />
+			<JFXCheckBox fx:id="cbPool" checkedColor="#73a800" layoutX="440.0" layoutY="350.0" style="-fx-opacity: 1;-fx-font-size : 19px;" text="Pool" textFill="#0d2c54" unCheckedColor="#ac005d" />
+			<Label layoutX="60.0" layoutY="410.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 25px;" text="Total:" textFill="#020438" />
+			<Label fx:id="lblTotal" layoutX="300.0" layoutY="410.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 30px;" text=" $100" textFill="#020438" />
+			<JFXButton fx:id="btnReserve" buttonType="RAISED" layoutX="80.0" layoutY="500" prefHeight="50" prefWidth="160.0" style="-fx-background-color: #73A800; -fx-background-radius: 10; -fx-font-size: 19px;" text="Reserve" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+			<JFXButton fx:id="btnCancel" buttonType="RAISED" layoutX="300.0" layoutY="500" onAction="#SwitchUI" prefHeight="50" prefWidth="160.0" style="-fx-background-color: #AC005D; -fx-background-radius: 10; -fx-font-size: 19px;" text="Cancel" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+		</AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="370.0" prefWidth="400.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+	<children>
+		<TextField layoutX="80" layoutY="1.0" prefHeight="55" prefWidth="250" style="-fx-background-color: transparent; -fx-text-fill: #24a0ed;" text="HOTEL ILLINOIS">
+			<font>
+				<Font name="SansSerif Regular" size="25" />
+			</font>
+		</TextField>
+	</children> 
+	<Label layoutX="160.0" layoutY="55.0" prefHeight="30.0" prefWidth="80.0" style="-fx-text-fill: #A9A9A9;" text="Login">
+		<font>
+	          	<Font name="SansSerif Regular" size="30.0" />
+		</font>
+    </Label>
+   <RadioButton fx:id="rbAdmin" layoutX="63.0" layoutY="115.0" mnemonicParsing="false" selected="true" text="Admin">
+      <toggleGroup>
+         <ToggleGroup fx:id="UserType" />
+      </toggleGroup>
+      <font>
+         <Font size="14.0" />
+      </font>
+   </RadioButton>
+   <RadioButton fx:id="rbManager" layoutX="166.0" layoutY="115.0" mnemonicParsing="false" text="Manager" toggleGroup="$UserType">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </RadioButton>  
+   <RadioButton fx:id="rbUser" layoutX="276.0" layoutY="115.0" mnemonicParsing="false" text="User" toggleGroup="$UserType">
+      <font>
+         <Font size="14.0" />
+      </font>
+     </RadioButton>
+   
+    <TextField fx:id="txtLoginUser" layoutX="50.0" layoutY="145.0" prefHeight="35.0" prefWidth="300.0" promptText="Username / Email" style="-fx-border-width: 2; -fx-border-color: #A9A9A9; -fx-border-radius: 5;">
+		<font>
+		    <Font name="SansSerif Regular" size="14.0" />
+		</font>
+	<cursor>
+	    <Cursor fx:constant="TEXT" />
+    </cursor>
+	</TextField>
+       <PasswordField fx:id="pwdLoginPassword" layoutX="50.0" layoutY="195.0" prefHeight="35.0" prefWidth="300.0" promptText="Password" style="-fx-border-width: 2; -fx-border-color: #A9A9A9; -fx-border-radius: 5;">
+		<font>
+		    <Font name="SansSerif Regular" size="14.0" />
+		</font>
+       </PasswordField>
+       <Button fx:id="btnLogin" layoutX="170.0" layoutY="275.0" mnemonicParsing="false" onAction="#onLogin" style="-fx-background-color: #24a0ed; -fx-text-fill: white; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #24a0ed;" text="Login">
+           <font>
+               <Font size="15.0" />
+           </font>
+       </Button>
+   <Label layoutX="97.0" layoutY="316.0" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: #A9A9A9;" text="Don't have an account?">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+   <Button fx:id="btnRegister" layoutX="242.0" layoutY="316.0" mnemonicParsing="false" onAction="#onRegisterClick" style="-fx-background-color: transparent; -fx-text-fill: #A9A9A9;" text="Register" underline="true">
+		<font>
+			<Font size="15.0" />
+		</font>
+	</Button>
+   <Label fx:id="lblError" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="240.0" prefHeight="29.0" prefWidth="292.0" textAlignment="CENTER" textFill="#da2e2e" >
+   		<font>
+			<Font size="15.0" />
+		</font>
+   </Label>
+</AnchorPane>

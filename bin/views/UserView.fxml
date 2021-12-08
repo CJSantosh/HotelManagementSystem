@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="435.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserController">
+   <children>
+      <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="435.0" prefWidth="455.0" style="-fx-background-color: #700961;">
+         <children>
+            <Label layoutX="148.0" layoutY="30.0" text="CUSTOMER" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="25.0" />
+               </font>
+            </Label>
+            <Line endX="230.0" fill="WHITE" layoutX="104.0" layoutY="66.0" opacity="0.85" stroke="WHITE" strokeLineCap="ROUND" />
+            <JFXButton fx:id="btnBookRoom" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="105.0" layoutY="130.0" onAction="#SwitchUI" prefHeight="40.0" prefWidth="230.0" text="Book Room" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="HOME" size="25" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnManageBooking" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="104.0" layoutY="182.0" onAction="#SwitchUI" prefHeight="40.0" prefWidth="230.0" text="Manage Booking" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="25" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnManageProfile" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="104.0" layoutY="229.0" onAction="#SwitchUI" prefHeight="40.0" prefWidth="230.0" text="Manage Profile" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="MOVIE" size="25" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnLogout" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="104.0" layoutY="279.0" onAction="#logOut" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="POWER" size="25" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="23.0" layoutY="384.0" text="Logged in as: Santosh" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_CIRCLE" size="20" />
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

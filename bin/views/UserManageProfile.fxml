@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserController">
+   <children>
+	    <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #A9A9A9;">
+	         <children>
+	         	<Label layoutX="50.0" layoutY="30.0" text="CUSTOMER" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="25.0" />
+	               </font>
+	            </Label>
+	            <Line endX="230.0" fill="WHITE" layoutX="10.0" layoutY="60.0" opacity="0.85" stroke="BLACK" strokeLineCap="ROUND" />
+	            <JFXButton fx:id="btnBookRoom" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="130.0" onAction="#SwitchUI" prefHeight="40.0" prefWidth="230.0" text="Book Room" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="20" />
+	               </font>
+	               <graphic>
+	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+	               </graphic>
+	               <cursor>
+	                  <Cursor fx:constant="HAND" />
+	               </cursor>
+	            </JFXButton>
+	            <JFXButton fx:id="btnManageBooking" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="180.0" onAction="#SwitchUI" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Manage Booking" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="20" />
+	               </font>
+	               <graphic>
+	                  <FontAwesomeIconView fill="BLACK" glyphName="PLUS_SQUARE" size="25" />
+	               </graphic>
+	               <cursor>
+	                  <Cursor fx:constant="HAND" />
+	               </cursor>
+	            </JFXButton>
+	            <JFXButton fx:id="btnManageProfile" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="230.0" onAction="#SwitchUI" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Manage Profile" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="20" />
+	               </font>
+	               <graphic>
+	                  <MaterialDesignIconView fill="BLACK" glyphName="MOVIE" size="25" />
+	               </graphic>
+	               <cursor>
+	                  <Cursor fx:constant="HAND" />
+	               </cursor>
+	            </JFXButton>
+	            <JFXButton fx:id="logoutbtn" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="280.0" onAction="#logOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="BLACK">
+	               <font>
+	                  <Font name="SansSerif Regular" size="20" />
+	               </font>
+	               <graphic>
+	                  <MaterialDesignIconView fill="BLACK" glyphName="POWER" size="25" />
+	               </graphic>
+	               <cursor>
+	                  <Cursor fx:constant="HAND" />
+	               </cursor>
+	            </JFXButton>
+	            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="20.0" layoutY="625.0" text="Logged in as: Santosh" textFill="BLACK">
+	               <font>
+	                  <Font size="14.0" />
+	               </font>
+	               <graphic>
+	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="20" />
+	               </graphic>
+	            </Label>
+	         </children>
+	      </AnchorPane>
+		<AnchorPane layoutX="250.0" layoutY="10.0" prefHeight="680.0" prefWidth="680.0" style="-fx-background-color: #F5F5F5;" styleClass="tiles">
+			<Label layoutX="60.0" layoutY="50.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="First Name" textFill="#020438" />
+			<TextField fx:id="txtFName" layoutX="300.0" layoutY="50.0" prefHeight="40" prefWidth="300" style="-fx-font-size : 19px;" />
+			<Label layoutX="60.0" layoutY="110.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Last Name" textFill="#020438" />
+			<TextField fx:id="txtLName" layoutX="300.0" layoutY="110.0" prefHeight="40" prefWidth="300" style="-fx-font-size : 19px;" />
+			<Label layoutX="60.0" layoutY="170.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Email" textFill="#020438" />
+			<TextField fx:id="txtEmail" layoutX="300.0" layoutY="170.0" prefHeight="40" prefWidth="300" style="-fx-font-size : 19px;" />
+			<Label layoutX="60.0" layoutY="230.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Phone" textFill="#020438" />
+			<TextField fx:id="txtPhone" layoutX="300.0" layoutY="230.0" prefHeight="40" prefWidth="300" style="-fx-font-size : 19px;" />
+			<Label layoutX="60.0" layoutY="290.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Password" textFill="#020438" />
+			<PasswordField fx:id="pfPassword" layoutX="300.0" layoutY="290.0" prefHeight="40" prefWidth="300" style="-fx-font-size : 19px;" />
+			<Label layoutX="60.0" layoutY="350.0" prefHeight="40.0" prefWidth="200.0" style="-fx-font-size : 19px;" text="Confirm Password" textFill="#020438" />
+			<PasswordField fx:id="pfConfirmPassword" layoutX="300.0" layoutY="350.0" prefHeight="40" prefWidth="300" style="-fx-font-size : 19px;" />
+			<Label layoutX="60.0" layoutY="410.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="User Type" textFill="#020438" />
+			<TextField fx:id="txtUserType" Editable="false" layoutX="300.0" layoutY="410.0" prefHeight="40" prefWidth="300" style="-fx-font-size : 19px;" text="User" />
+			<Label layoutX="60.0" layoutY="470.0" prefHeight="40.0" prefWidth="200.0" style="-fx-font-size : 19px;" text="Date OF Birth" textFill="#020438" />
+			<JFXDatePicker fx:id="dpDoB" layoutX="300" layoutY="470" style="-fx-font-size : 19px;" />
+			<Label layoutX="60.0" layoutY="530.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Gender" textFill="#020438" />
+			<JFXRadioButton fx:id="rbMale" layoutX="300" layoutY="530" style="-fx-font-size : 19px;" text="Male">
+				<toggleGroup>
+		        	<ToggleGroup fx:id="Gender" />
+		    	</toggleGroup>
+			</JFXRadioButton>
+			<JFXRadioButton fx:id="rbFemale" layoutX="400" layoutY="530.0" style="-fx-font-size : 19px;" text="Female" toggleGroup="$Gender">
+			</JFXRadioButton>
+			<JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="103.0" layoutY="600.0" prefHeight="50" prefWidth="160.0" style="-fx-background-color: #73A800; -fx-background-radius: 10; -fx-font-size: 19px;" text="Update" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+			<JFXButton fx:id="btnCancel" buttonType="RAISED" layoutX="392.0" layoutY="600.0" onAction="#SwitchUI" prefHeight="50" prefWidth="160.0" style="-fx-background-color: #AC005D; -fx-background-radius: 10; -fx-font-size: 19px;" text="Cancel" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+		</AnchorPane>
+   </children>
+</AnchorPane>
