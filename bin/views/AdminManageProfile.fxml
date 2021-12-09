@@ -29,7 +29,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="CALENDAR" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -40,7 +40,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <FontAwesomeIconView fill="BLACK" glyphName="PLUS_SQUARE" size="25" />
+	                  <FontAwesomeIconView fill="BLACK" glyphName="HOTEL" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -51,13 +51,13 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="MOVIE" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
 	               </cursor>
 	            </JFXButton>
-	            <JFXButton fx:id="btnLogout" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="280.0" onAction="#LogOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="BLACK">
+	            <JFXButton fx:id="btnLogout" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="280.0" onAction="#logOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="BLACK">
 	               <font>
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
@@ -68,14 +68,6 @@
 	                  <Cursor fx:constant="HAND" />
 	               </cursor>
 	            </JFXButton>
-	            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="16.0" layoutY="627.0" text="Logged in as: Santosh" textFill="BLACK">
-	               <font>
-	                  <Font size="14.0" />
-	               </font>
-	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="20" />
-	               </graphic>
-	            </Label>
 	         </children>
 	      </AnchorPane>
 		<AnchorPane layoutX="250.0" layoutY="10.0" prefHeight="680.0" prefWidth="680.0" style="-fx-background-color: #F5F5F5;" styleClass="tiles">
@@ -113,7 +105,10 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-         <Label fx:id="lblError" layoutX="58.0" layoutY="560.0" prefHeight="24.0" prefWidth="379.0" />
+         <Label fx:id="lblError" layoutX="58.0" layoutY="560.0" prefHeight="24.0" prefWidth="379.0" textFill="#f83838">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
 		</AnchorPane>
    </children>
 </AnchorPane>

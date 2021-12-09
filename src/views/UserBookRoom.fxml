@@ -29,7 +29,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+                  <FontAwesomeIconView fill="BLACK" glyphName="PLUS_SQUARE" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -40,7 +40,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <FontAwesomeIconView fill="BLACK" glyphName="PLUS_SQUARE" size="25" />
+	                  <FontAwesomeIconView fill="BLACK" glyphName="BOOK" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -51,7 +51,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="MOVIE" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -68,32 +68,19 @@
 	                  <Cursor fx:constant="HAND" />
 	               </cursor>
 	            </JFXButton>
-	            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="20.0" layoutY="520.0" text="Logged in as: Santosh" textFill="BLACK">
-	               <font>
-	                  <Font size="14.0" />
-	               </font>
-	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="20" />
-	               </graphic>
-	            </Label>
 	         </children>
 	      </AnchorPane>
 		<AnchorPane layoutX="250.0" layoutY="10.0" prefHeight="580.0" prefWidth="600.0" style="-fx-background-color: #F5F5F5;" styleClass="tiles">
 			<Label layoutX="60.0" layoutY="50.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Guests" textFill="#020438" />
-			<JFXComboBox fx:id="cbmGuest" layoutX="300.0" layoutY="50.0" prefHeight="26.0" prefWidth="80.0">
+			<JFXComboBox fx:id="cbmGuest" layoutX="300.0" layoutY="50.0" onAction="#onCalculatePrice" prefHeight="26.0" prefWidth="80.0">
 			   <items>
 			      <FXCollections fx:factory="observableArrayList">
-			         <String fx:value="0" />
 			         <String fx:value="1" />
 			         <String fx:value="2" />
 			         <String fx:value="3" />
 			         <String fx:value="4" />
 			         <String fx:value="5" />
 			         <String fx:value="6" />
-			         <String fx:value="7" />
-			         <String fx:value="8" />
-			         <String fx:value="9" />
-			         <String fx:value="10" />
 			      </FXCollections>
 			   </items>
 			   <cursor>
@@ -101,20 +88,12 @@
 			   </cursor>
 			</JFXComboBox>
 			<Label layoutX="60.0" layoutY="110.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Rooms" textFill="#020438" />
-			<JFXComboBox fx:id="cbmRooms" layoutX="300.0" layoutY="110.0" prefHeight="26.0" prefWidth="80.0">
+			<JFXComboBox fx:id="cbmRooms" layoutX="300.0" layoutY="110.0" onAction="#onCalculatePrice" prefHeight="26.0" prefWidth="80.0">
 			   <items>
 			      <FXCollections fx:factory="observableArrayList">
-			         <String fx:value="0" />
 			         <String fx:value="1" />
 			         <String fx:value="2" />
 			         <String fx:value="3" />
-			         <String fx:value="4" />
-			         <String fx:value="5" />
-			         <String fx:value="6" />
-			         <String fx:value="7" />
-			         <String fx:value="8" />
-			         <String fx:value="9" />
-			         <String fx:value="10" />
 			      </FXCollections>
 			   </items>
 			   <cursor>
@@ -122,7 +101,7 @@
 			   </cursor>
 			</JFXComboBox>
 			<Label layoutX="60.0" layoutY="170.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Room Type" textFill="#020438" />
-			<JFXComboBox fx:id="cbmRoomType" layoutX="300.0" layoutY="170.0" prefHeight="26.0" prefWidth="200.0">
+			<JFXComboBox fx:id="cbmRoomType" layoutX="300.0" layoutY="170.0" onAction="#onCalculatePrice" prefHeight="26.0" prefWidth="200.0">
 			   <items>
 			      <FXCollections fx:factory="observableArrayList">
 			         <String fx:value="Semi Delux" />
@@ -139,12 +118,12 @@
 			<JFXDatePicker fx:id="dpDateFrom" layoutX="300" layoutY="230" style="-fx-font-size : 18px;" />
 			<Label layoutX="60.0" layoutY="290.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 19px;" text="Date To" textFill="#020438" />
 			<JFXDatePicker fx:id="dpDateTo" layoutX="300" layoutY="290" style="-fx-font-size : 18px;" />
-			<JFXCheckBox fx:id="cbSpa" checkedColor="#73a800" layoutX="60.0" layoutY="350.0" style="-fx-opacity: 1; -fx-font-size : 19px;" text="Spa" textFill="#0d2c54" unCheckedColor="#ac005d" />
-            <JFXCheckBox fx:id="cbLounge" checkedColor="#73a800" layoutX="240.0" layoutY="350.0" style="-fx-opacity: 1; -fx-font-size : 19px;" text="Lounge" textFill="#0d2c54" unCheckedColor="#ac005d" />
-			<JFXCheckBox fx:id="cbPool" checkedColor="#73a800" layoutX="440.0" layoutY="350.0" style="-fx-opacity: 1;-fx-font-size : 19px;" text="Pool" textFill="#0d2c54" unCheckedColor="#ac005d" />
+			<JFXCheckBox fx:id="cbSpa" checkedColor="#73a800" layoutX="60.0" layoutY="350.0" onAction="#onCalculatePrice" style="-fx-opacity: 1; -fx-font-size : 19px;" text="Spa" textFill="#0d2c54" unCheckedColor="#ac005d" />
+            <JFXCheckBox fx:id="cbLounge" checkedColor="#73a800" layoutX="240.0" layoutY="350.0" onAction="#onCalculatePrice" style="-fx-opacity: 1; -fx-font-size : 19px;" text="Lounge" textFill="#0d2c54" unCheckedColor="#ac005d" />
+			<JFXCheckBox fx:id="cbPool" checkedColor="#73a800" layoutX="440.0" layoutY="350.0" onAction="#onCalculatePrice" style="-fx-opacity: 1;-fx-font-size : 19px;" text="Pool" textFill="#0d2c54" unCheckedColor="#ac005d" />
 			<Label layoutX="60.0" layoutY="410.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 25px;" text="Total:" textFill="#020438" />
-			<Label fx:id="lblTotal" layoutX="300.0" layoutY="410.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 30px;" text=" $100" textFill="#020438" />
-			<JFXButton fx:id="btnReserve" buttonType="RAISED" layoutX="80.0" layoutY="500" prefHeight="50" prefWidth="160.0" style="-fx-background-color: #73A800; -fx-background-radius: 10; -fx-font-size: 19px;" text="Reserve" textFill="WHITE">
+			<Label fx:id="lblTotal" layoutX="300.0" layoutY="410.0" prefHeight="40.0" prefWidth="100.0" style="-fx-font-size : 30px;" text=" " textFill="#020438" />
+			<JFXButton fx:id="btnReserve" buttonType="RAISED" layoutX="80.0" layoutY="500" onAction="#onReserve" prefHeight="50" prefWidth="160.0" style="-fx-background-color: #73A800; -fx-background-radius: 10; -fx-font-size: 19px;" text="Reserve" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

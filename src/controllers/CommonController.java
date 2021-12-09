@@ -1,3 +1,6 @@
+
+//Common controller with common methods for all other controllers
+
 package controllers;
 
 import java.io.IOException;
@@ -15,7 +18,7 @@ public class CommonController {
 
 	String sUsername;
 	String sPassword;
-
+	
 	public void SwitchBtwUI(ActionEvent event, String Username, String Password)
 	{
 		sUsername = Username;
@@ -25,7 +28,7 @@ public class CommonController {
 		int height = 0;
 		AdminController admCtrl = null;
 		UserController userCtrl = null;
-
+		
 		switch(((JFXButton)(event.getSource())).getId())
 		{
 		case "btnBookRoom":
@@ -89,6 +92,11 @@ public class CommonController {
 				admCtrl = (AdminController)fxmlLoader.getController();
 				admCtrl.displayProfileData(sUsername, sPassword);
 				break;
+			case "btnAdminCancel":
+				admCtrl = (AdminController)fxmlLoader.getController();
+				admCtrl.sUsername = sUsername;
+				admCtrl.sPassword = sPassword;
+				break;
 			case "btnBookRoom":
 				userCtrl = (UserController)fxmlLoader.getController();
 				userCtrl.displayBookRoomData(sUsername, sPassword);
@@ -101,6 +109,11 @@ public class CommonController {
 				userCtrl = (UserController)fxmlLoader.getController();
 				userCtrl.displayProfileData(sUsername, sPassword);
 				break;
+			case "btnCancel":
+				userCtrl = (UserController)fxmlLoader.getController();
+				userCtrl.sUsername = sUsername;
+				userCtrl.sPassword = sPassword;
+				break;
 			}
 
 			Node source = (Node) event.getSource();
@@ -109,7 +122,9 @@ public class CommonController {
 			scene.getStylesheets().add(getClass().getResource("/application/Application.css").toExternalForm());
 			stage.setScene(scene);
 			stage.show();
-		} catch (IOException ex) {
+		} 
+		catch (IOException ex) 
+		{
 
 		}
 	}

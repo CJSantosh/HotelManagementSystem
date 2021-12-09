@@ -1,3 +1,5 @@
+// Admin controller for admin related UI's
+
 package controllers;
 
 import java.io.IOException;
@@ -9,6 +11,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextField;
 
 import dao.DBConnect;
 import javafx.collections.ObservableList;
@@ -18,7 +21,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -29,6 +31,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import models.AdminModel;
+import models.BookingsModel;
 import models.RoomModel;
 
 public class AdminController extends CommonController{
@@ -36,7 +39,32 @@ public class AdminController extends CommonController{
 
 	//User View Bookings controls
 	@FXML
-	private TableView<String> tvBookings;
+	private TableView<BookingsModel> tvBookings;
+	@FXML
+	private TableColumn<BookingsModel, String> tcBookingID;
+	@FXML
+	private TableColumn<BookingsModel, String> tcEmail;
+	@FXML
+	private TableColumn<BookingsModel, String> tcNoOfRooms;
+	@FXML
+	private TableColumn<BookingsModel, String> tcBookingRoomType;
+	@FXML
+	private TableColumn<BookingsModel, String> tcDateFrom;
+	@FXML
+	private TableColumn<BookingsModel, String> tcDateTo;
+	@FXML
+	private TableColumn<BookingsModel, String> tcSpa;
+	@FXML
+	private TableColumn<BookingsModel, String> tcLounge;
+	@FXML
+	private TableColumn<BookingsModel, String> tcPool;
+	@FXML
+	private TableColumn<BookingsModel, String> tcBookingPrice;
+	@FXML
+	private TableColumn<BookingsModel, String> tcBookingStatus;
+	@FXML
+	private JFXTextField txtBookingID;
+	
 	//User Manage Rooms controls
 	@FXML
 	private TableView<RoomModel> tvManageRooms;
@@ -73,23 +101,26 @@ public class AdminController extends CommonController{
 	@FXML
 	private JFXButton btnUpdate;
 	@FXML
-	private Button testbtn;
-	@FXML
 	private Label lblError;
 	@FXML
-	private JFXComboBox cbmRoomNo;
+	private JFXComboBox<String> cbmRoomNo;
 	@FXML
-	private JFXComboBox cbmRoomStatus;
-
+	private JFXComboBox<String> cbmRoomStatus;
+	@FXML
+	private Label userlabel;
+	
 	DBConnect dbConnect = null;
 	Statement sStatement = null;
 
 	String sUsername;
 	String sPassword;
+	
 	ObservableList<RoomModel> lstRooms;
+	ObservableList<BookingsModel> lstBookings;
 
 	AdminModel admModel = null;
 	RoomModel rmModel = null;
+	BookingsModel bkgModel = null;
 
 	private Stage stage;
 	private Scene scene;
@@ -100,6 +131,7 @@ public class AdminController extends CommonController{
 		dbConnect = new DBConnect();
 		admModel = new AdminModel();
 		rmModel = new RoomModel();
+		bkgModel = new BookingsModel();
 	}
 
 	public void SwitchUI(ActionEvent event)
@@ -168,16 +200,10 @@ public class AdminController extends CommonController{
 					+ "', Phone='" + sPhone + "', Password='" + spwdPassword 
 					+ "', DOB='" + sDOB + "', Gender='" + sGender 
 					+ "' WHERE Email='" + sEmail + "' ;";
-			System.out.print(sql);
 
-			String sql_Admin_User = "";
-
-			sql_Admin_User = "UPDATE hms_Admin SET FName='"
-					+ sFName + "' where Email='" + sEmail + "' ;";
 
 			int con = sStatement.executeUpdate(sql);
-			int con1 = sStatement.executeUpdate(sql_Admin_User);
-			if (con > 0 && con1 > 0) 
+			if (con > 0) 
 			{
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/AdminView.fxml"));
 				root = fxmlLoader.load();
@@ -196,33 +222,51 @@ public class AdminController extends CommonController{
 		}
 	}
 
-	public void onUpdateRoom()
+	public void displayBookingsData(String username, String password) 
+	{
+		this.sUsername = username;
+		this.sPassword = password;
+		
+		String query = "SELECT * FROM hms_bookings ;";
+		
+		lstBookings = bkgModel.GetBookingDetails(query);
+
+		tcBookingID.setCellValueFactory(new PropertyValueFactory<BookingsModel, String>("BookingID"));
+		tcEmail.setCellValueFactory(new PropertyValueFactory<BookingsModel, String>("Email"));
+		tcNoOfRooms.setCellValueFactory(new PropertyValueFactory<BookingsModel, String>("NoOfRooms"));
+		tcBookingRoomType.setCellValueFactory(new PropertyValueFactory<BookingsModel, String>("RoomType"));
+		tcDateFrom.setCellValueFactory(new PropertyValueFactory<BookingsModel, String>("DateFrom"));
+		tcDateTo.setCellValueFactory(new PropertyValueFactory<BookingsModel, String>("DateTo"));
+		tcBookingPrice.setCellValueFactory(new PropertyValueFactory<BookingsModel, String>("Price"));
+		tcBookingStatus.setCellValueFactory(new PropertyValueFactory<BookingsModel, String>("Status"));
+
+		tvBookings.setItems(lstBookings);
+		tvBookings.setColumnResizePolicy((param) -> true);
+
+	}
+	public void onDelete()
 	{
 		try
-		{
-			String sRoomNo = cbmRoomNo.getSelectionModel().getSelectedItem().toString();
-			String sStatus = cbmRoomStatus.getSelectionModel().getSelectedItem().toString();
+		{			
+			int iBookingID = Integer.parseInt(txtBookingID.getText());
 			
+			System.out.print(iBookingID);
+			sStatement = dbConnect.getConnection().createStatement();
+			String sql = "DELETE FROM hms_Bookings WHERE BookingID='" + iBookingID + "' ;";
 			
-			String sql = "UPDATE hms_Login SET Status='" + sStatus
-					+ "' WHERE RoomNo='" + sRoomNo + "' ;";
+			int con = sStatement.executeUpdate(sql);
+			if(con > 0)
+			{
+				displayBookingsData( this.sUsername, this.sPassword);
+				txtBookingID.setText(null);
+			}
 		}
 		catch (SQLException e) 
 		{
 			e.printStackTrace();
 		}
 	}
-
-	public void displayBookingsData(String username, String password) 
-	{
-		this.sUsername = username;
-		this.sPassword = password;
-		this.sUsername = username;
-		this.sPassword = password;
-		admModel.GetUserDetails(sUsername, sPassword);
-		this.txtFName.setText(admModel.getFName());
-		this.txtLName.setText(admModel.getLName());
-	}
+	
 	public void displayRoomData(String username, String password) 
 	{
 		this.sUsername = username;
@@ -240,8 +284,39 @@ public class AdminController extends CommonController{
 		tvManageRooms.setItems(lstRooms);
 		tvManageRooms.setColumnResizePolicy((param) -> true);
 	}
-	public void LogOut(ActionEvent event)
+	
+	public void onUpdateRoom()
 	{
+		try
+		{
+			String sRoomNo = cbmRoomNo.getSelectionModel().getSelectedItem().toString();
+			String sStatus = cbmRoomStatus.getSelectionModel().getSelectedItem().toString();
+			
+			sStatement = dbConnect.getConnection().createStatement();
+			String sql = "UPDATE hms_Rooms SET Status='" + sStatus
+					+ "' WHERE RoomNo='" + sRoomNo + "' ;";
+			int con = sStatement.executeUpdate(sql);
+			if(con > 0)
+			{
+				displayRoomData( this.sUsername, this.sPassword);
+				cbmRoomNo.getSelectionModel().clearSelection();
+				cbmRoomStatus.getSelectionModel().clearSelection();
+			}
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
 
+	@FXML
+	public void logOut(ActionEvent event) throws IOException
+	{
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/Login.fxml"));
+		root = fxmlLoader.load();
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 }

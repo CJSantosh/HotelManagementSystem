@@ -1,11 +1,11 @@
+
+//Model for room related details
+
 package models;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import com.mysql.cj.xdevapi.Statement;
-
 import dao.DBConnect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +18,6 @@ public class RoomModel
 	private String sStatus;
 	
 	DBConnect dbConnect = null;
-	Statement stmt = null;
 	
 	public RoomModel()
 	{

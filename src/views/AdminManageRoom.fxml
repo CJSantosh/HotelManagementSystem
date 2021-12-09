@@ -28,7 +28,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="CALENDAR" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -39,7 +39,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="HOTEL" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -50,13 +50,13 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="MOVIE" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
 	               </cursor>
 	            </JFXButton>
-	            <JFXButton fx:id="btnLogout" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="290.0" onAction="#LogOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="BLACK">
+	            <JFXButton fx:id="btnLogout" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="290.0" onAction="#logOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="BLACK">
 	               <font>
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
@@ -67,14 +67,6 @@
 	                  <Cursor fx:constant="HAND" />
 	               </cursor>
 	            </JFXButton>
-	            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="20.0" layoutY="520.0" text="Logged in as: Santosh" textFill="BLACK">
-	               <font>
-	                  <Font size="14.0" />
-	               </font>
-	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="20" />
-	               </graphic>
-	            </Label>
 	         </children>
 	      </AnchorPane>
 		<AnchorPane layoutX="239.0" layoutY="3.0" prefHeight="600.0" prefWidth="780.0">
@@ -96,7 +88,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="btnUpdate" onAction="#onUpdateRoom" buttonType="RAISED" layoutX="584.0" layoutY="488.0" prefHeight="50" prefWidth="160.0" style="-fx-background-color: #73A800; -fx-background-radius: 10; -fx-font-size: 19px;" text="Update" textFill="WHITE">
+            <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="584.0" layoutY="488.0" onAction="#onUpdateRoom" prefHeight="50" prefWidth="160.0" style="-fx-background-color: #73A800; -fx-background-radius: 10; -fx-font-size: 19px;" text="Update" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -116,14 +108,6 @@
                      <String fx:value="10" />
                      <String fx:value="11" />
                      <String fx:value="12" />
-                     <String fx:value="13" />
-                     <String fx:value="14" />
-                     <String fx:value="15" />
-                     <String fx:value="16" />
-                     <String fx:value="17" />
-                     <String fx:value="18" />
-                     <String fx:value="19" />
-                     <String fx:value="20" />
                   </FXCollections>
                </items>
                <cursor>

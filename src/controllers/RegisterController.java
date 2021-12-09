@@ -1,3 +1,6 @@
+
+//Controller which are used to register user and admin details and connect to database
+
 package controllers;
 
 import java.io.IOException;
@@ -26,7 +29,7 @@ import javafx.stage.Stage;
 
 public class RegisterController {
 
-	ObservableList<String> lstUserType = FXCollections.observableArrayList("Admin","Manager","User");
+	ObservableList<String> lstUserType = FXCollections.observableArrayList("Admin","User");
 
 	@FXML
 	private TextField txtFName;
@@ -111,20 +114,8 @@ public class RegisterController {
 					+ sFName + "','" + sLName + "','" + sEmail + "','" + sPhone + "','" 
 					+ spwdPassword + "','" + sUserType + "','" + sDOB + "','" + sGender + "');";
 
-			String sql_Admin_User = "";
-			if(sUserType.equals("Admin"))
-			{
-				sql_Admin_User = "INSERT INTO hms_Admin (FName,Email) VALUES ('"
-						+ sFName + "','" + sEmail + "');";
-			}			
-			if(sUserType.equals("User"))
-			{
-				sql_Admin_User = "INSERT INTO hms_User (FName, Email) VALUES ('"
-						+ sFName + "','" + sEmail + "');";
-			}
 			int con = sStatement.executeUpdate(sql);
-			int con1 = sStatement.executeUpdate(sql_Admin_User);
-			if (con > 0 && con1 > 0) 
+			if (con > 0) 
 			{
 				callLogin(event);
 			}

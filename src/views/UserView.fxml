@@ -24,7 +24,7 @@
                   <Font name="SansSerif Regular" size="20" />
                </font>
                <graphic>
-                  <MaterialDesignIconView fill="WHITE" glyphName="HOME" size="25" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="25" />
                </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -35,7 +35,7 @@
                   <Font name="SansSerif Regular" size="20" />
                </font>
                <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="25" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="BOOK" size="25" />
                </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -46,7 +46,7 @@
                   <Font name="SansSerif Regular" size="20" />
                </font>
                <graphic>
-                  <MaterialDesignIconView fill="WHITE" glyphName="MOVIE" size="25" />
+                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_CIRCLE" size="25" />
                </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -63,14 +63,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="23.0" layoutY="384.0" text="Logged in as: Santosh" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <graphic>
-                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_CIRCLE" size="20" />
-               </graphic>
-            </Label>
          </children>
       </AnchorPane>
    </children>

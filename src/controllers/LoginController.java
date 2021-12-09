@@ -1,3 +1,6 @@
+
+//Controllers for all login credential details
+
 package controllers;
 
 import java.io.IOException;
@@ -76,8 +79,7 @@ public class LoginController {
 
 		
 		Boolean isValid = model.getCredentials(username, password, sUserType);
-
-
+		
 		if (!isValid) 
 		{
 			lblError.setText(sUserType + " does not exist!");
@@ -85,7 +87,6 @@ public class LoginController {
 		}
 		try 
 		{
-
 			String newscene="";
 			int width = 0;
 			int height = 0;
@@ -105,6 +106,7 @@ public class LoginController {
 
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(newscene));
 			Parent root = fxmlLoader.load();
+
 			if(sUserType.equals("Admin"))
 			{
 				AdminController admCtrl = ((AdminController)fxmlLoader.getController());
@@ -117,7 +119,7 @@ public class LoginController {
 				userCtrl.sUsername = username;
 				userCtrl.sPassword = password;
 			}
-			
+
 			Node source = (Node) event.getSource();
 			Stage stage = (Stage)source.getScene().getWindow();
 			Scene scene = new Scene(root, width, height);
@@ -126,7 +128,7 @@ public class LoginController {
 			stage.show();
 
 		} catch (Exception e) {
-			System.out.println("Error occured while inflating view: " + e);
+			System.out.println("Error occured while checking credentials: " + e);
 		}
 
 	}

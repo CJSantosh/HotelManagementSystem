@@ -26,7 +26,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+                  <FontAwesomeIconView fill="BLACK" glyphName="PLUS_SQUARE" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -37,7 +37,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <FontAwesomeIconView fill="BLACK" glyphName="PLUS_SQUARE" size="25" />
+	                  <FontAwesomeIconView fill="BLACK" glyphName="BOOK" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -48,7 +48,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="MOVIE" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -65,14 +65,6 @@
 	                  <Cursor fx:constant="HAND" />
 	               </cursor>
 	            </JFXButton>
-	            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="20.0" layoutY="520.0" text="Logged in as: Santosh" textFill="BLACK">
-	               <font>
-	                  <Font size="14.0" />
-	               </font>
-	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="20" />
-	               </graphic>
-	            </Label>
 	         </children>
 	      </AnchorPane>
 		<AnchorPane layoutX="239.0" layoutY="3.0" prefHeight="600.0" prefWidth="785.0">
@@ -81,19 +73,6 @@
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <TableView fx:id="tvMyBookings" layoutX="32.0" layoutY="88.0" prefHeight="440.0" prefWidth="725.0">
-              <columns>
-                	<TableColumn prefWidth="75" text="Booking ID" />
-                	<TableColumn prefWidth="88" text="No of Guests" />
-					<TableColumn prefWidth="85" text="No of Rooms" />
-					<TableColumn prefWidth="82" text="Room Type" />
-					<TableColumn prefWidth="64." text="Date From" />
-					<TableColumn prefWidth="66" text="Date To" />
-					<TableColumn prefWidth="89" text="Spa Access" />
-					<TableColumn prefWidth="96" text="Lounge Access" />
-					<TableColumn prefWidth="88" text="Pool Access" />
-              </columns>
-            </TableView>
             <JFXButton fx:id="btnCancel" buttonType="RAISED" layoutX="32.0" layoutY="19.0" onAction="#SwitchUI" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #AC005D; -fx-background-radius: 10; -fx-font-size: 19px;" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -101,5 +80,20 @@
             </JFXButton>
          </children>
       </AnchorPane>
+      <TableView fx:id="tvMyBookings" layoutX="259.0" layoutY="98.0" prefHeight="440.0" prefWidth="750.0">
+         <columns>
+            <TableColumn fx:id="tcBookingID" prefWidth="67.0" text="Booking ID" />
+            <TableColumn fx:id="tcEmail" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="tcNoOfRooms" prefWidth="77.0" text="No of Rooms" />
+            <TableColumn fx:id="tcBookingRoomType" prefWidth="75.0" text="Room Type" />
+            <TableColumn fx:id="tcDateFrom" prefWidth="83.0" text="Date From" />
+            <TableColumn fx:id="tcDateTo" prefWidth="85.0" text="Date To" />
+            <TableColumn fx:id="tcSpa" prefWidth="44.0" text="Spa" />
+            <TableColumn fx:id="tcLounge" prefWidth="55.0" text="Lounge" />
+            <TableColumn fx:id="tcPool" prefWidth="41.0" text="Pool" />
+            <TableColumn fx:id="tcBookingPrice" prefWidth="67.0" text="Price" />
+            <TableColumn fx:id="tcBookingStatus" prefWidth="79.0" text="Status" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>

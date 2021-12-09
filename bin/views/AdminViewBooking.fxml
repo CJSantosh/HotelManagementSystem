@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -25,7 +26,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="CALENDAR" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -36,7 +37,7 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="HOME" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="HOTEL" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
@@ -47,13 +48,13 @@
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
 	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="MOVIE" size="25" />
+	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="25" />
 	               </graphic>
 	               <cursor>
 	                  <Cursor fx:constant="HAND" />
 	               </cursor>
 	            </JFXButton>
-	            <JFXButton fx:id="btnLogout" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="290.0" onAction="#LogOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="BLACK">
+	            <JFXButton fx:id="btnLogout" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="290.0" onAction="#logOut" opacity="0.8" prefHeight="40.0" prefWidth="230.0" text="Log Out" textFill="BLACK">
 	               <font>
 	                  <Font name="SansSerif Regular" size="20" />
 	               </font>
@@ -64,14 +65,6 @@
 	                  <Cursor fx:constant="HAND" />
 	               </cursor>
 	            </JFXButton>
-	            <Label fx:id="userlabel" graphicTextGap="10.0" layoutX="20.0" layoutY="520.0" text="Logged in as: Santosh" textFill="BLACK">
-	               <font>
-	                  <Font size="14.0" />
-	               </font>
-	               <graphic>
-	                  <MaterialDesignIconView fill="BLACK" glyphName="ACCOUNT_CIRCLE" size="20" />
-	               </graphic>
-	            </Label>
 	         </children>
 	      </AnchorPane>
 
@@ -81,18 +74,16 @@
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <TableView fx:id="tvBookings" layoutX="32.0" layoutY="88.0" prefHeight="440.0" prefWidth="725.0">
+            <TableView fx:id="tvBookings" layoutX="20.0" layoutY="88.0" prefHeight="440.0" prefWidth="608.0">
               <columns>
-                	<TableColumn prefWidth="75" text="Booking ID" />
-					<TableColumn prefWidth="85" text="No of Rooms" />
-					<TableColumn prefWidth="82" text="Room Type" />
-					<TableColumn prefWidth="64." text="Date From" />
-					<TableColumn prefWidth="66" text="Date To" />
-					<TableColumn prefWidth="55" text="Spa" />
-					<TableColumn prefWidth="55" text="Lounge" />
-					<TableColumn prefWidth="55" text="Pool" />
-					<TableColumn prefWidth="80" text="Price" />
-                	<TableColumn prefWidth="80" text="Status" />
+                	<TableColumn fx:id="tcBookingID" prefWidth="67.0" text="Booking ID" />
+                  <TableColumn fx:id="tcEmail" prefWidth="75.0" text="Email" />
+					<TableColumn fx:id="tcNoOfRooms" prefWidth="77.0" text="No of Rooms" />
+					<TableColumn fx:id="tcBookingRoomType" prefWidth="75.0" text="Room Type" />
+					<TableColumn fx:id="tcDateFrom" prefWidth="83.0" text="Date From" />
+					<TableColumn fx:id="tcDateTo" prefWidth="85.0" text="Date To" />
+					<TableColumn fx:id="tcBookingPrice" prefWidth="67.0" text="Price" />
+                	<TableColumn fx:id="tcBookingStatus" prefWidth="79.0" text="Status" />
               </columns>
             </TableView>
             <JFXButton fx:id="btnAdminCancel" buttonType="RAISED" layoutX="32.0" layoutY="24.0" onAction="#SwitchUI" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #AC005D; -fx-background-radius: 10; -fx-font-size: 19px;" text="Back" textFill="WHITE">
@@ -100,6 +91,17 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="637.0" layoutY="361.0" onAction="#onDelete" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #73A800; -fx-background-radius: 10; -fx-font-size: 19px;" text="Delete" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="637.0" layoutY="230.0" prefHeight="40.0" prefWidth="137.0" text="Delete Booking ID">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtBookingID" layoutX="641.0" layoutY="280.0" prefHeight="40.0" prefWidth="137.0" style="-fx-font-size : 14px;" />
          </children>
       </AnchorPane>
     </children>

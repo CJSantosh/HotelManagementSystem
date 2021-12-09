@@ -24,20 +24,15 @@
 	          	<Font name="SansSerif Regular" size="30.0" />
 		</font>
     </Label>
-   <RadioButton fx:id="rbAdmin" layoutX="63.0" layoutY="115.0" mnemonicParsing="false" selected="true" text="Admin">
+   <RadioButton fx:id="rbAdmin" layoutX="80.0" layoutY="115.0" mnemonicParsing="false" selected="true" text="Admin">
       <toggleGroup>
          <ToggleGroup fx:id="UserType" />
       </toggleGroup>
       <font>
          <Font size="14.0" />
       </font>
-   </RadioButton>
-   <RadioButton fx:id="rbManager" layoutX="166.0" layoutY="115.0" mnemonicParsing="false" text="Manager" toggleGroup="$UserType">
-      <font>
-         <Font size="14.0" />
-      </font>
    </RadioButton>  
-   <RadioButton fx:id="rbUser" layoutX="276.0" layoutY="115.0" mnemonicParsing="false" text="User" toggleGroup="$UserType">
+   <RadioButton fx:id="rbUser" layoutX="200.0" layoutY="115.0" mnemonicParsing="false" text="User" toggleGroup="$UserType">
       <font>
          <Font size="14.0" />
       </font>

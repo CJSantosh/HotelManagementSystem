@@ -1,3 +1,6 @@
+
+//Class used for database connection
+
 package dao;
 
 import java.sql.Connection;

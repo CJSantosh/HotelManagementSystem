@@ -1,3 +1,6 @@
+
+//Model for Login credential details
+
 package models;
 
 import java.sql.PreparedStatement;

@@ -1,3 +1,6 @@
+
+//Model for all admin related details
+
 package models;
 
 import java.sql.Date;
@@ -99,29 +102,5 @@ public class AdminModel extends DBConnect{
 			e.printStackTrace();
 		}
 		
-	}
-	public void GetRoomDetails(String sUsername, String sPassword)
-	{
-		String query = "SELECT * FROM hms_rooms ;";
-		
-		try (PreparedStatement stmt = connection.prepareStatement(query)) 
-		{
-			stmt.setString(1, sUsername);
-			stmt.setString(2, sPassword);
-			stmt.setString(3, "Admin");
-			ResultSet rs = stmt.executeQuery();
-			if (rs.next()) 
-			{
-				setFName(rs.getString("FName"));
-				setLName(rs.getString("LName"));
-				setEmail(rs.getString("Email"));
-				setPhone(rs.getString("Phone"));
-				setPassword(rs.getString("Password"));
-				setDOB(rs.getDate("DOB"));
-				setGender(rs.getString("Gender"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 	}
 }
